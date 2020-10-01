@@ -19,7 +19,10 @@ class AddEventForm extends Component {
 
   handleAddImage = async newEventData => {
     await eventAPI.create(newEventData)
-      .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
+      .then(
+        console.log()
+      )
+      // .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
   }
 
   handleSubmit = e => {
@@ -80,7 +83,7 @@ class AddEventForm extends Component {
                 type="submit"
                 disabled={this.state.invalidForm}
               >
-                Add Image
+                Add Event
               </button>
             </div>
             {/* cancel button */}

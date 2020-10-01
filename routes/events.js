@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const eventsCtrl = require('../controllers/users');
+const eventsCtrl = require('../controllers/events');
 
 /*---------- Public Routes ----------*/
 
@@ -8,6 +8,7 @@ const eventsCtrl = require('../controllers/users');
 /*---------- Protected Routes ----------*/
 router.use(require("../config/auth"));
 router.get("/", checkAuth, eventsCtrl.index);
+router.post('/', checkAuth, eventsCtrl.create)
 
 
 /*---------- Auth Checker ----------*/
