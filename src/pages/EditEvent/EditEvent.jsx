@@ -84,7 +84,15 @@ class EditEvent extends Component {
                 type="submit"
                 disabled={this.state.invalidForm}
               >
-                Add Event
+                Update Event
+              </button>
+            </div>
+            <div className=''>
+              <button
+                className=''
+                onClick={() => this.handleCancelEvent(image._id)}
+              >
+                Cancel Event
               </button>
             </div>
             {/* cancel button */}
