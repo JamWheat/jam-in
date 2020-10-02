@@ -57,7 +57,7 @@ function getUserAttending(req, res){
 
 function getOne(req, res){
   Event.findById(req.params.id)
-    .then(event => { 
-      res.json(event) })
+    .populate('host')
+    .then(event => { res.json(event) })
     .catch(err => { res.json(err) })
 }
