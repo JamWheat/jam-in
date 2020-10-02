@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AddEventForm.css'
 
 class AddEventForm extends Component {
   state = {
@@ -98,7 +99,7 @@ class AddEventForm extends Component {
             </div>
             <div className=''>
               <button
-                className=''
+                className='btn btn-green'
                 type="submit"
                 disabled={this.state.invalidForm}
               >

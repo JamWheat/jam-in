@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './FilterEventsForm.css'
 
 class FilterEventsForm extends Component {
   state = {
@@ -48,14 +49,13 @@ class FilterEventsForm extends Component {
                 <option value="videogames">Video Games</option>
                 <option value="workouts">Workout</option>
               </select>
-          </div>
-          <div>
+  
               <label></label>
               <input name="startDateTime" type="datetime-local" value={this.state.formData.startDateTime} onChange={this.handleChange} required />
-            </div>
-          <div className=''>
+            
+          
             <button
-              className=''
+              className='btn btn-green'
               type="submit"
               disabled={this.state.invalidForm}
             >

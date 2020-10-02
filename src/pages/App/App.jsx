@@ -35,7 +35,7 @@ class App extends Component {
           path="/"
           render={() => (
             <main>
-              <h1>Welcome to JamIn</h1>
+              <h3>Welcome to JamIn, a place to find virtual events!</h3>
               <LandingPage 
                 user = {this.state.user}
               />
