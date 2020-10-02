@@ -31,3 +31,17 @@ export function deleteevent(id) {
   }, { mode: "cors" })
       .then(res => res.json());
 }
+
+// export function filter(filterData) {
+//   return fetch(`${BASE_URL}filter`, {body: JSON.stringify(filterData)}, { mode: "cors" })
+//       .then(res => res.json())
+// }
+
+export function filter(filterData) {
+    return fetch(`${BASE_URL}filter`, {
+        method: "PUT",
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(filterData)
+    }, { mode: "cors" })
+        .then(res => res.json());
+  }

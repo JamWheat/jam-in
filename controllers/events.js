@@ -4,7 +4,8 @@ module.exports = {
   index,
   create,
   update,
-  delete: deleteOne
+  delete: deleteOne,
+  filter
 };
 
 function index(req, res) {
@@ -28,5 +29,11 @@ function update(req, res) {
 function deleteOne(req, res) {
   Event.findByIdAndDelete(req.params.id)
     .then(project => { res.json(project) })
+    .catch(err => { res.json(err) })
+}
+
+function filter(req, res) {
+  Event.find({catagory: req.body.catagory, dateTime: {$gt: req.body.startDateTime}})
+    .then(events => { res.json(events) })
     .catch(err => { res.json(err) })
 }
