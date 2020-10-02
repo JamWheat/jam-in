@@ -3,12 +3,14 @@ const router = express.Router();
 const eventsCtrl = require('../controllers/events');
 
 /*---------- Public Routes ----------*/
+router.get("/", checkAuth, eventsCtrl.index);
 
 
 /*---------- Protected Routes ----------*/
 router.use(require("../config/auth"));
-router.get("/", checkAuth, eventsCtrl.index);
 router.post('/', checkAuth, eventsCtrl.create)
+router.put('/:id', checkAuth, eventsCtrl.update)
+router.delete('/:id', checkAuth, eventsCtrl.delete)
 
 
 /*---------- Auth Checker ----------*/
