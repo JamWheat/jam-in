@@ -13,7 +13,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  req.body.createdBy = req.user._id
+  req.body.host = req.user._id
   req.body.ticked = (req.body.ticketed === 'true')
   Event.create(req.body)
     .then(event => { res.json(event) })
