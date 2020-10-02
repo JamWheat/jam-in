@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as eventAPI from '../../services/eventServices'
 
 class AddEventForm extends Component {
   state = {
@@ -18,14 +17,11 @@ class AddEventForm extends Component {
 
   formRef = React.createRef()
 
-  handleAddEvent = async newEventData => {
-    await eventAPI.create(newEventData)
-      // .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
-  }
+  
 
   handleSubmit = e => {
     e.preventDefault();
-    this.handleAddEvent(this.state.formData)
+    this.props.handleAddEvent(this.state.formData)
   }
 
   handleChange = e => {

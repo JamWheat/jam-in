@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
         <nav>
           <div className="nav-wrapper">
               <div>
-              <h1><a href="/">Jam-In</a></h1>
+              <h1><a href="/">JamIn</a></h1>
               {/* <h3>Welcome, {user.name}</h3> */}
               </div>
             <table>
@@ -38,13 +38,15 @@ const NavBar = ({ user, handleLogout }) => {
       :
       <nav>
         <div className="nav-wrapper">
-        <a href='/'><img src='https://via.placeholder.com/80/FFFFFF/000000' alt='logo'/></a>
-          <h1>Jam-In</h1>
+          <h1><a href="/">JamIn</a></h1>
             <table>
             <tbody>
                 <tr>
                   <td className="tdL">
                     <a href="/login" className="nav-link">Log In</a>
+                  </td>
+                  <td>
+                      
                   </td>
                   <td className="tdL">
                     <a href="/signup" className="nav-link">Sign Up</a>

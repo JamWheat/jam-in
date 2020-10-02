@@ -73,8 +73,10 @@ class App extends Component {
         />
         <Route
           exact path="/createevent"
-          render={() => 
-            <CreateEvent />
+          render={({history}) => 
+            <CreateEvent 
+              history = {history}
+            />
           }
         />
         <Route
