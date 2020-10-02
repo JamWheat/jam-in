@@ -13,9 +13,6 @@ function create(req, res) {
   req.body.createdBy = req.user._id
   req.body.ticked = (req.body.ticketed === 'true')
   Event.create(req.body)
-    .then(event => { 
-      console.log(event)
-      res.json(event) 
-    })
+    .then(event => { res.json(event) })
     .catch(err => { res.json(err) })
 }
