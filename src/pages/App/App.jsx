@@ -8,7 +8,6 @@ import Profile from '../../components/Profile/Profile'
 import "./App.css";
 import EventDetails from '../EventDetails/EventDetails'
 import CreateEvent from '../CreateEvent/CreateEvent'
-import FilterEvents from '../../components/FilterEventsForm/FilterEventsForm'
 import FilterEventsForm from "../../components/FilterEventsForm/FilterEventsForm";
 
 class App extends Component {

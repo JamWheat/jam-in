@@ -3,6 +3,7 @@ import * as eventAPI from '../../services/eventServices'
 
 class FilterEventsForm extends Component {
   state = {
+    filteredEvents: [],
     invalidForm: true,
     formData: {
       catagory: '',
@@ -15,8 +16,10 @@ class FilterEventsForm extends Component {
   formRef = React.createRef()
 
   handleFilterEvents = async filterData => {
-    await eventAPI.filter(filterData)
-      // .then(() => this.props.history.push(`/projects/${this.props.user._id}`))
+    const filteredEvents = await eventAPI.filter(filterData)
+    // .then(() => this.props.history.push(`/projects/${this.props.user._id}`))
+    this.setState({ filteredEvents })
+    // (console.log(filteredEvents))
   }
 
   handleSubmit = e => {
@@ -38,7 +41,7 @@ class FilterEventsForm extends Component {
         <form ref={this.formRef} onSubmit={this.handleSubmit}>
           <div>
             <select name="catagory" onChange={this.handleChange} value={this.state.formData.catagory} required>
-              <option value="" disabled selected>Chose a catagory</option>
+              <option value="" disabled>Chose a catagory</option>
               <option value="concert">Concert</option>
               <option value="forum">Forum</option>
               <option value="hang">Hang Out</option>

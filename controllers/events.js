@@ -34,7 +34,6 @@ function deleteOne(req, res) {
 
 function filter(req, res) {
   Event.find({catagory: req.body.catagory, dateTime: {$gt: req.body.startDateTime}})
-    .then(events => {
-      console.log(events)
-    })
+    .then(events => { res.json(events) })
+    .catch(err => { res.json(err) })
 }
