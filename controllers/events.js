@@ -5,7 +5,9 @@ module.exports = {
   create,
   update,
   delete: deleteOne,
-  filter
+  filter,
+  getUserHosting,
+  getUserAttending
 };
 
 function index(req, res) {
@@ -34,6 +36,20 @@ function deleteOne(req, res) {
 
 function filter(req, res) {
   Event.find({catagory: req.body.catagory, dateTime: {$gt: req.body.startDateTime}})
+    .then(events => { res.json(events) })
+    .catch(err => { res.json(err) })
+}
+
+function getUserHosting(req, res){
+  console.log(req.params.id)
+  Event.find({host: req.params.id})
+    .then(events => { res.json(events) })
+    .catch(err => { res.json(err) })
+}
+
+function getUserAttending(req, res){
+  console.log(req.params.id)
+  Event.find({attending: req.params.id})
     .then(events => { res.json(events) })
     .catch(err => { res.json(err) })
 }

@@ -1,21 +1,44 @@
 import React, { Component } from 'react'
 import * as eventAPI from '../../services/eventServices'
+import UserEventCard from '../../components/UserEventCard/UserEventCard'
 // import './Profile.css'
 
 class Profile extends Component {
    state = {
-      events: []
+      hosting: [],
+      attending: []
    }
 
-   // async componentDidMount() {
-   //    const events = await eventAPI.getForUser(this.props.user.id);
-   //    this.setState({ events })
-   // }
+   async componentDidMount() {
+      const hosting = await eventAPI.getUserHosting(this.props.user._id);
+      const attending = await eventAPI.getUserAttending(this.props.user._id);
+      this.setState({ hosting, attending })
+   }
 
    render() { 
       return (
          <>
          <h1>Profile</h1>
+         <h3>Hosted Events</h3>
+         <div className=''>
+            {this.state.hosting.map(event =>
+               <div>
+                  <UserEventCard 
+                     event = {event}
+                  />
+               </div>
+            )}
+         </div>
+         <h3>Attending Events</h3>
+         <div className=''>
+            {this.state.attending.map(event =>
+               <div>
+                  <UserEventCard 
+                     event = {event}
+                  />
+               </div>
+            )}
+         </div>
          </>
       );
    }

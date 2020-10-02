@@ -46,10 +46,17 @@ export function filter(filterData) {
         .then(res => res.json());
 }
 
-export function getForUser(id) {
-    return fetch(`${BASE_URL}user/${id}`, {
-      // headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+export function getUserHosting(id) {
+    return fetch(`${BASE_URL}userhost/${id}`, {
+      headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
     }, {mode: "cors"})
     .then(res => res.json())
   }
+
+export function getUserAttending(id) {
+return fetch(`${BASE_URL}useratt/${id}`, {
+    headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+}, {mode: "cors"})
+.then(res => res.json())
+}
   
