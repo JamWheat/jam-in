@@ -9,6 +9,7 @@ import EventDetails from '../EventDetails/EventDetails'
 import CreateEvent from '../CreateEvent/CreateEvent'
 import FilterEventsForm from "../../components/FilterEventsForm/FilterEventsForm";
 import Profile from '../Profile/Profile'
+import EditEvent from '../EditEvent/EditEvent'
 
 class App extends Component {
   state = {
@@ -76,6 +77,15 @@ class App extends Component {
           render={() => 
             <Profile 
               user = {this.state.user}
+            />
+          }
+        />
+        <Route
+          exact path="/editevent"
+          render={({location}) => 
+            <EditEvent 
+              user = {this.state.user}
+              location = {location}
             />
           }
         />

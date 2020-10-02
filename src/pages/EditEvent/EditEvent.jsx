@@ -8,10 +8,10 @@ class EditEvent extends Component {
 
   formRef = React.createRef()
 
-  handleUpdateEvent = async updatedEventData => {
-    await eventAPI.update(updatedEventData)
-      // .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
-  }
+  // handleUpdateEvent = async updatedEventData => {
+  //   await eventAPI.update(updatedEventData)
+  //     // .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
+  // }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -38,6 +38,10 @@ class EditEvent extends Component {
             <div>
               <label>Description</label>
               <input name="desc" type="text" value={this.state.formData.desc} onChange={this.handleChange} required />
+            </div>
+            <div>
+              <label>Image URL</label>
+              <input name="image" type="text" value={this.state.formData.image} onChange={this.handleChange} />
             </div>
             {/* <div>
               <label>Event Url</label>
@@ -88,12 +92,12 @@ class EditEvent extends Component {
               </button>
             </div>
             <div className=''>
-              <button
+              {/* <button
                 className=''
-                onClick={() => this.handleCancelEvent(image._id)}
+                onClick={() => this.handleCancelEvent(event._id)}
               >
                 Cancel Event
-              </button>
+              </button> */}
             </div>
             {/* cancel button */}
           </form>

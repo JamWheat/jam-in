@@ -7,6 +7,7 @@ class AddEventForm extends Component {
     formData: {
       title: '',
       desc: '',
+      image: '',
       dateTime: '',
       // time: '',
       catagory: '',
@@ -52,6 +53,10 @@ class AddEventForm extends Component {
               <label>Event Url</label>
               <input name="url" type="text" value={this.state.formData.url} onChange={this.handleChange} required />
             </div> */}
+            <div>
+              <label>Image URL</label>
+              <input name="image" type="text" value={this.state.formData.image} onChange={this.handleChange} />
+            </div>
             <div>
               <label>Date and Time</label>
               <input name="dateTime" type="datetime-local" value={this.state.formData.date} onChange={this.handleChange} required />
