@@ -8,7 +8,8 @@ const eventSchema = new Schema({
   time: String,
   createdBy: {type: Schema.Types.ObjectId, ref: 'User'},
   ticketed: Boolean,
-  catagory: String
+  catagory: String,
+  url: String
 }, {
   timestamps: true
 });
