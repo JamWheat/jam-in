@@ -59,4 +59,26 @@ return fetch(`${BASE_URL}useratt/${id}`, {
 }, {mode: "cors"})
 .then(res => res.json())
 }
-  
+
+export function eventDetails(id) {
+    return fetch(`${BASE_URL}event/${id}`)
+        .then(res => res.json())
+}
+
+export function userAttend(userid, eventid) {
+    return fetch(`${BASE_URL}attend/${eventid}`, {
+        method: "PUT",
+        headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+        body: JSON.stringify(userid)
+    }, { mode: "cors" })
+        .then(res => res.json());
+}
+
+export function userUnattend(userid, eventid) {
+    return fetch(`${BASE_URL}unattend/${eventid}`, {
+        method: "PUT",
+        headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+        body: JSON.stringify(userid)
+    }, { mode: "cors" })
+        .then(res => res.json());
+}
