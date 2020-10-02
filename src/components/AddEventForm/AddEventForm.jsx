@@ -41,7 +41,6 @@ class AddEventForm extends Component {
   render() { 
     return (
       <>
-        <h1>Add an Event</h1>
         <div className='form-div'>
           <form ref={this.formRef} onSubmit={this.handleSubmit}>
             <div>
@@ -66,6 +65,7 @@ class AddEventForm extends Component {
             </div> */}
             <div>
               <select name="catagory" onChange={this.handleChange} value={this.state.formData.catagory} required>
+                <option value=""></option>
                 <option value="concert">Concert</option>
                 <option value="forum">Forum</option>
                 <option value="hang">Hang Out</option>
@@ -73,8 +73,8 @@ class AddEventForm extends Component {
             </div>
             <div>
               <select name="ticketed" onChange={this.handleChange} value={this.state.formData.tickered} required>
-                <option value="true">Ticketed</option>
                 <option value="false">Not Ticketed</option>
+                <option value="true">Ticketed</option>
               </select>
             </div>
             <div className=''>

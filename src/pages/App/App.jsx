@@ -4,10 +4,10 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
-import Users from "../Users/Users";
 import Profile from '../../components/Profile/Profile'
 import "./App.css";
-import AddEventForm from '../../components/AddEventForm/AddEventForm'
+import EventDetails from '../EventDetails/EventDetails'
+import CreateEvent from '../CreateEvent/CreateEvent'
 
 class App extends Component {
   state = {
@@ -35,7 +35,6 @@ class App extends Component {
           render={() => (
             <main>
               <h1>Welcome to JamIn</h1>
-              <AddEventForm />
             </main>
           )}
         />
@@ -60,9 +59,16 @@ class App extends Component {
           )}
         />
         <Route
-          exact
-          path="/users"
-          render={() => (user ? <Users /> : <Redirect to="/login" />)}
+          exact path="/eventdetails"
+          render={() => 
+            <EventDetails />
+          }
+        />
+        <Route
+          exact path="/createevent"
+          render={() => 
+            <CreateEvent />
+          }
         />
       </>
     );

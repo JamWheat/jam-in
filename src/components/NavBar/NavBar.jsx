@@ -34,7 +34,7 @@ const NavBar = ({ user, handleLogout }) => {
                 </tr>
                 <tr>
                   <td className="tdL">
-                    <a href="/users" className="nav-link">Users</a>
+                    <a href="/createevent" className="nav-link">Create an Event</a>
                   </td>
                 </tr>
                 <tr>
@@ -62,11 +62,6 @@ const NavBar = ({ user, handleLogout }) => {
                 <tr>
                   <td className="tdL">
                     <a href="/signup" className="nav-link">Sign Up</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="tdL">
-                    <a href="/users" className="nav-link">Users</a>
                   </td>
                 </tr>
             </tbody>
