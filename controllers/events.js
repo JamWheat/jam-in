@@ -8,7 +8,9 @@ module.exports = {
   filter,
   getUserHosting,
   getUserAttending,
-  getOne
+  getOne,
+  attend,
+  unattend
 };
 
 function index(req, res) {
@@ -59,5 +61,29 @@ function getOne(req, res){
   Event.findById(req.params.id)
     .populate('host')
     .then(event => { res.json(event) })
+    .catch(err => { res.json(err) })
+}
+
+function attend(req, res){
+  console.log(req.params.id, req.body)
+  Event.findById(req.params.id)
+    .then(event => {
+      event.attending.push(req.body.boop)
+      event.save()
+      res.json(event)
+    })
+    .catch(err => { res.json(err) })
+}
+
+function unattend(req, res){
+  Event.findById(req.params.id)
+    .then((event) => {
+      let idx = event.attending.indexOf(req.body.boop)
+      if (idx > -1) {
+        event.attending.splice(idx, 1)
+        event.save()
+        res.json(event)
+      }
+    })
     .catch(err => { res.json(err) })
 }

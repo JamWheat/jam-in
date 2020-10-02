@@ -15,6 +15,8 @@ router.get('/useratt/:id', checkAuth, eventsCtrl.getUserAttending)
 router.post('/', checkAuth, eventsCtrl.create)
 router.put('/:id', checkAuth, eventsCtrl.update)
 router.delete('/:id', checkAuth, eventsCtrl.delete)
+router.put('/attend/:id', checkAuth, eventsCtrl.attend)
+router.put('/unattend/:id', checkAuth, eventsCtrl.unattend)
 
 
 /*---------- Auth Checker ----------*/
