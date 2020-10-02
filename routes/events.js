@@ -3,7 +3,8 @@ const router = express.Router();
 const eventsCtrl = require('../controllers/events');
 
 /*---------- Public Routes ----------*/
-router.get("/", checkAuth, eventsCtrl.index);
+router.get("/", eventsCtrl.index);
+router.get('/filter', eventsCtrl.filter)
 
 
 /*---------- Protected Routes ----------*/

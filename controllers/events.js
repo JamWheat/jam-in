@@ -4,7 +4,8 @@ module.exports = {
   index,
   create,
   update,
-  delete: deleteOne
+  delete: deleteOne,
+  filter
 };
 
 function index(req, res) {
@@ -29,4 +30,8 @@ function deleteOne(req, res) {
   Event.findByIdAndDelete(req.params.id)
     .then(project => { res.json(project) })
     .catch(err => { res.json(err) })
+}
+
+function filter(req, res) {
+  console.log('*******CONTROLLER HIT******')
 }

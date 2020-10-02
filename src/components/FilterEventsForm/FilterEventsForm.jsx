@@ -3,7 +3,7 @@ import * as eventAPI from '../../services/eventServices'
 
 class FilterEventsForm extends Component {
   state = {
-    invalidForm: false,
+    invalidForm: true,
     formData: {
       catagory: '',
       startDateTime: '',

@@ -33,6 +33,6 @@ export function deleteevent(id) {
 }
 
 export function filter(filterData) {
-  return fetch(BASE_URL, { mode: "cors" })
+  return fetch(`${BASE_URL}filter`, { mode: "cors" })
       .then(res => res.json(filterData))
 }
