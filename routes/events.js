@@ -9,6 +9,8 @@ router.put('/filter', eventsCtrl.filter)
 
 /*---------- Protected Routes ----------*/
 router.use(require("../config/auth"));
+router.get('/userhost/:id', checkAuth, eventsCtrl.getUserHosting)
+router.get('/useratt/:id', checkAuth, eventsCtrl.getUserAttending)
 router.post('/', checkAuth, eventsCtrl.create)
 router.put('/:id', checkAuth, eventsCtrl.update)
 router.delete('/:id', checkAuth, eventsCtrl.delete)

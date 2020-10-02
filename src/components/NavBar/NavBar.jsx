@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout }) => {
             <tbody>
                 <tr>
                   <td className="tdL">
-                    <a href={'/profile/'+user._id} className="nav-link">My Profile</a>
+                    <a href='/profile/' className="nav-link">My Profile</a>
                   </td>
                 </tr>
                 <tr>
