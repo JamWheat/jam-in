@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   title: String,
   desc: String,
-  date: String,
-  time: String,
+  dateTime: Date,
+  // time: Date,
   createdBy: {type: Schema.Types.ObjectId, ref: 'User'},
   ticketed: Boolean,
   catagory: String,

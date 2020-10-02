@@ -7,8 +7,8 @@ class AddEventForm extends Component {
     formData: {
       title: '',
       desc: '',
-      date: '',
-      time: '',
+      dateTime: '',
+      // time: '',
       catagory: '',
       ticketed: false,
       url: ''
@@ -57,13 +57,13 @@ class AddEventForm extends Component {
               <input name="url" type="text" value={this.state.formData.url} onChange={this.handleChange} required />
             </div>
             <div>
-              <label>Date</label>
-              <input name="date" type="date" value={this.state.formData.date} onChange={this.handleChange} required />
+              <label>Date and Time</label>
+              <input name="dateTime" type="datetime-local" value={this.state.formData.date} onChange={this.handleChange} required />
             </div>
-            <div>
+            {/* <div>
               <label>Time</label>
               <input name="time" type="time" value={this.state.formData.time} onChange={this.handleChange} required />
-            </div>
+            </div> */}
             <div>
               <select name="catagory" onChange={this.handleChange} value={this.state.formData.catagory} required>
                 <option value="concert">Concert</option>
