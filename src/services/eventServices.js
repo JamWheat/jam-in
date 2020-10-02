@@ -31,3 +31,8 @@ export function deleteevent(id) {
   }, { mode: "cors" })
       .then(res => res.json());
 }
+
+export function filter(filterData) {
+  return fetch(BASE_URL, { mode: "cors" })
+      .then(res => res.json(filterData))
+}
