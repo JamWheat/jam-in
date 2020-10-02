@@ -11,7 +11,7 @@ class AddEventForm extends Component {
       // time: '',
       catagory: '',
       ticketed: false,
-      url: ''
+      // url: ''
     }
   }
 
@@ -51,19 +51,30 @@ class AddEventForm extends Component {
               <label>Description</label>
               <input name="desc" type="text" value={this.state.formData.desc} onChange={this.handleChange} required />
             </div>
-            <div>
+            {/* <div>
               <label>Event Url</label>
               <input name="url" type="text" value={this.state.formData.url} onChange={this.handleChange} required />
-            </div>
+            </div> */}
             <div>
               <label>Date and Time</label>
               <input name="dateTime" type="datetime-local" value={this.state.formData.date} onChange={this.handleChange} required />
+            </div>
+            <div>
+              <label>Time Zone</label>
+              <select name="zone" onChange={this.handleChange} value={this.state.formData.zone} required>
+                <option value=""></option>
+                <option value="EST">EST</option>
+                <option value="CST">CST</option>
+                <option value="MST">MST</option>
+                <option value="PST">PST</option>
+              </select>
             </div>
             {/* <div>
               <label>Time</label>
               <input name="time" type="time" value={this.state.formData.time} onChange={this.handleChange} required />
             </div> */}
             <div>
+              <label>Catagory</label>
               <select name="catagory" onChange={this.handleChange} value={this.state.formData.catagory} required>
                 <option value=""></option>
                 <option value="concert">Concert</option>
@@ -72,7 +83,9 @@ class AddEventForm extends Component {
               </select>
             </div>
             <div>
+              <label>Ticketed?</label>
               <select name="ticketed" onChange={this.handleChange} value={this.state.formData.tickered} required>
+                <option value=""></option>
                 <option value="false">Not Ticketed</option>
                 <option value="true">Ticketed</option>
               </select>
