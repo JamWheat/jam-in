@@ -1,30 +1,21 @@
 import React, { Component } from 'react'
-import * as eventAPI from '../../services/eventServices'
 
-class AddEventForm extends Component {
+class EditEvent extends Component {
   state = {
-    invalidForm: true,
-    formData: {
-      title: '',
-      desc: '',
-      dateTime: '',
-      // time: '',
-      catagory: '',
-      ticketed: false,
-      // url: ''
-    }
+    invalidForm: false,
+    formData: ''
   }
 
   formRef = React.createRef()
 
-  handleAddEvent = async newEventData => {
-    await eventAPI.create(newEventData)
+  handleUpdateEvent = async updatedEventData => {
+    await eventAPI.update(updatedEventData)
       // .then(() => this.props.history.push(`/gallery/${this.props.user._id}`))
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    this.handleAddEvent(this.state.formData)
+    this.handleUpdateEvent(this.state.formData)
   }
 
   handleChange = e => {
@@ -34,14 +25,14 @@ class AddEventForm extends Component {
       invalidForm: !this.formRef.current.checkValidity()
     });
   }
-  
+
   render() { 
     return (
       <>
         <div className=''>
           <form ref={this.formRef} onSubmit={this.handleSubmit}>
             <div>
-              <label>Title</label>
+              <label>Ti  tle</label>
               <input name="title" type="text" value={this.state.formData.title} onChange={this.handleChange} required />
             </div>
             <div>
@@ -93,7 +84,15 @@ class AddEventForm extends Component {
                 type="submit"
                 disabled={this.state.invalidForm}
               >
-                Add Event
+                Update Event
+              </button>
+            </div>
+            <div className=''>
+              <button
+                className=''
+                onClick={() => this.handleCancelEvent(image._id)}
+              >
+                Cancel Event
               </button>
             </div>
             {/* cancel button */}
@@ -104,4 +103,4 @@ class AddEventForm extends Component {
   }
 }
  
-export default AddEventForm;
+export default EditEvent;
