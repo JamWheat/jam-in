@@ -49,14 +49,14 @@ class EventDetails extends Component {
         </div>
         <div>
           {event.attending.includes(this.props.user._id)?
-           <button
+           <button className="btn btn-red"
            onClick={() => this.handleUserUnattend(this.props.user._id, event._id)}
            >
              Unattend
            </button>
           : 
           <>
-          <button
+          <button className="btn btn-green"
            onClick={() => this.handleUserAttend(this.props.user._id, event._id)}
            >
              Attend Event

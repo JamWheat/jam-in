@@ -16,8 +16,8 @@ class Profile extends Component {
    }
 
    handleCancelEvent = async (id) => {
-  
-    }
+      
+   }
 
    render() { 
       return (
@@ -27,11 +27,13 @@ class Profile extends Component {
          <div className=''>
             {this.state.hosting.map(event =>
                <div key={event._id}>
+                  <a href={`/eventdetails/${event._id}`}>
                   <UserEventCard 
                      event = {event}
                      user = {this.props.user}
                      handleCancelEvent = {this.handleCancelEvent}
                   />
+                  </a>
                </div>
             )}
          </div>

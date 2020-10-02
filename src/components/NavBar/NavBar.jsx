@@ -15,12 +15,12 @@ const NavBar = ({ user, handleLogout }) => {
               <tbody>
                   <tr>
                     <td className="tdL">
-                      <a href="/createevent" className="nav-link">Create Event</a>
+                      <a href="/createevent" className="nav-link btn btn-yellow">Create Event</a>
                     </td>
                     
                     <td>
                     <td className="tdL">
-                      <a href='/profile/' className="nav-link">My Events</a>
+                      <a href='/profile/' className="nav-link btn btn-green" >My Events</a>
                     </td>
                     </td>
                     
@@ -28,7 +28,7 @@ const NavBar = ({ user, handleLogout }) => {
                       
                     </td>
                     <td className="tdL">
-                      <a href=" " className="nav-link" onClick={handleLogout}>Log Out</a>
+                      <a href=" " className="nav-link btn btn-black" onClick={handleLogout}>Log Out</a>
                     </td>
                   </tr>
               </tbody>
@@ -43,13 +43,13 @@ const NavBar = ({ user, handleLogout }) => {
             <tbody>
                 <tr>
                   <td className="tdL">
-                    <a href="/login" className="nav-link">Log In</a>
+                    <a href="/login" className="nav-link btn btn-black">Log In</a>
                   </td>
                   <td>
                       
                   </td>
                   <td className="tdL">
-                    <a href="/signup" className="nav-link">Sign Up</a>
+                    <a href="/signup" className="nav-link btn btn-black">Sign Up</a>
                   </td>
                 </tr>
             </tbody>

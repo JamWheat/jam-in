@@ -14,25 +14,32 @@ a {
 }
 
 .btn{
+  border: none;
+  border-radius: 25px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
   
+
 }
 
 .btn-yellow{
-
-}
+  background-color: #F7DB95
+} 
 
 .btn-green{
-
+  background-color: #D2EFCA
 }
 
 .btn-black{
-
+  background-color: #000000;
+  color: white
 }
 
 .btn-grey{
-
+  background-color: #C4C4C4
 }
 
 .btn-red{
-
+  background-color: #EE9292
 }

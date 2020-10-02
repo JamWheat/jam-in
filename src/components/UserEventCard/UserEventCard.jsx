@@ -20,7 +20,7 @@ const UserEventCard = ({event, user}) => {
           >
             Edit
         </Link> */}
-        <button
+        <button className="btn btn-red"
           onClick={() => this.handleCancelEvent(event._id)}
         >
           Cancel
