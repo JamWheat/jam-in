@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EventCard = () => {
+const EventCard = (props) => {
   return (
     <>
     </>

@@ -44,4 +44,12 @@ export function filter(filterData) {
         body: JSON.stringify(filterData)
     }, { mode: "cors" })
         .then(res => res.json());
+}
+
+export function getForUser(id) {
+    return fetch(`${BASE_URL}user/${id}`, {
+      // headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+    }, {mode: "cors"})
+    .then(res => res.json())
   }
+  

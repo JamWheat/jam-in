@@ -4,11 +4,11 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
-import Profile from '../../components/Profile/Profile'
 import "./App.css";
 import EventDetails from '../EventDetails/EventDetails'
 import CreateEvent from '../CreateEvent/CreateEvent'
 import FilterEventsForm from "../../components/FilterEventsForm/FilterEventsForm";
+import Profile from '../Profile/Profile'
 
 class App extends Component {
   state = {
@@ -29,7 +29,6 @@ class App extends Component {
     return (
       <>
         <NavBar user={user} handleLogout={this.handleLogout} />
-        <Route path='/profile/:id' render={({history})=>(<Profile history={history} user={user}/>)} />
         <Route
           exact
           path="/"
@@ -70,6 +69,14 @@ class App extends Component {
           exact path="/createevent"
           render={() => 
             <CreateEvent />
+          }
+        />
+        <Route
+          exact path="/profile"
+          render={() => 
+            <Profile 
+              user = {this.state.user}
+            />
           }
         />
       </>
