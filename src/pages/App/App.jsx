@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
+import Profile from '../../components/Profile/Profile'
 import "./App.css";
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <>
         <NavBar user={user} handleLogout={this.handleLogout} />
+        <Route path='/profile/:id' render={({history})=>(<Profile history={history} user={user}/>)} />
         <Route
           exact
           path="/"

@@ -47,36 +47,36 @@ class SignupForm extends Component {
             id="name"
             value={name}
             name="name"
+            placeholder="Name"
             onChange={this.handleChange}
-          />
-          <label htmlFor="name">Name</label>
+          /><br/>
           <input
             type="text"
             autoComplete="off"
             id="email"
             value={email}
             name="email"
+            placeholder="E-Mail Address"
             onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
+          /><br/>
           <input
             type="password"
             autoComplete="off"
             id="password"
             value={password}
             name="password"
+            placeholder="Password"
             onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
+          /><br/>
           <input
             type="password"
             autoComplete="off"
             id="confirm"
             value={passwordConf}
             name="passwordConf"
+            placeholder="Confirm Password"
             onChange={this.handleChange}
-          />
-          <label htmlFor="confirm">Confirm Password</label>
+          /><br/>
           <button disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
           <Link to="/">Cancel</Link>
