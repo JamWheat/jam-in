@@ -79,9 +79,17 @@ class AddEventForm extends Component {
               <label>Catagory</label>
               <select name="catagory" onChange={this.handleChange} value={this.state.formData.catagory} required>
                 <option value=""></option>
-                <option value="concert">Concert</option>
-                <option value="forum">Forum</option>
-                <option value="hang">Hang Out</option>
+                <option value="art">Art</option>
+                <option value="boardgames">Board Games</option>
+                <option value="concerts">Concerts</option>
+                <option value="dance">Dance</option>
+                <option value="education">Education</option>
+                <option value="hangouts">Hang Outs</option>
+                <option value="networking">Networking</option>
+                <option value="party">Party</option>
+                <option value="plays">Plays</option>
+                <option value="videogames">Video Games</option>
+                <option value="workouts">Workout</option>
               </select>
             </div>
             <div>
