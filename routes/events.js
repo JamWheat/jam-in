@@ -4,7 +4,7 @@ const eventsCtrl = require('../controllers/events');
 
 /*---------- Public Routes ----------*/
 router.get("/", eventsCtrl.index);
-router.get('/filter', eventsCtrl.filter)
+router.put('/filter', eventsCtrl.filter)
 
 
 /*---------- Protected Routes ----------*/

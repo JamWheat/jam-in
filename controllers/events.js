@@ -33,5 +33,8 @@ function deleteOne(req, res) {
 }
 
 function filter(req, res) {
-  console.log('*******CONTROLLER HIT******')
+  Event.find({catagory: req.body.catagory, dateTime: {$gt: req.body.startDateTime}})
+    .then(events => {
+      console.log(events)
+    })
 }
