@@ -7,9 +7,9 @@ import authService from "../../services/authService";
 import "./App.css";
 import EventDetails from '../EventDetails/EventDetails'
 import CreateEvent from '../CreateEvent/CreateEvent'
-import FilterEventsForm from "../../components/FilterEventsForm/FilterEventsForm";
 import Profile from '../Profile/Profile'
 import EditEvent from '../EditEvent/EditEvent'
+import LandingPage from '../LandingPage/LadningPage'
 
 class App extends Component {
   state = {
@@ -36,7 +36,9 @@ class App extends Component {
           render={() => (
             <main>
               <h1>Welcome to JamIn</h1>
-              <FilterEventsForm />
+              <LandingPage 
+                user = {this.state.user}
+              />
             </main>
           )}
         />

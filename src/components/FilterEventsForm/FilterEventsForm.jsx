@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as eventAPI from '../../services/eventServices'
 
 class FilterEventsForm extends Component {
   state = {
@@ -15,16 +14,11 @@ class FilterEventsForm extends Component {
 
   formRef = React.createRef()
 
-  handleFilterEvents = async filterData => {
-    const filteredEvents = await eventAPI.filter(filterData)
-    // .then(() => this.props.history.push(`/projects/${this.props.user._id}`))
-    this.setState({ filteredEvents })
-    // (console.log(filteredEvents))
-  }
+  
 
   handleSubmit = e => {
     e.preventDefault();
-    this.handleFilterEvents(this.state.formData)
+    this.props.handleFilterEvents(this.state.formData)
   }
 
   handleChange = e => {
