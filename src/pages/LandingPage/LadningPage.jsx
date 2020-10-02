@@ -22,10 +22,12 @@ class LandingPage extends Component {
           handleFilterEvents = {this.handleFilterEvents}
         />
         {this.state.filteredEvents.map(event => 
-          <div key={event.id}>
-            <EventCard 
+          <div key={event._id}>
+            <a href={`/eventdetails/${event._id}`}>
+              <EventCard 
               event = {event}
-            />
+              />
+            </a>
           </div>
           )}
       </>

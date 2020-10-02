@@ -7,7 +7,8 @@ module.exports = {
   delete: deleteOne,
   filter,
   getUserHosting,
-  getUserAttending
+  getUserAttending,
+  getOne
 };
 
 function index(req, res) {
@@ -51,5 +52,11 @@ function getUserAttending(req, res){
   console.log(req.params.id)
   Event.find({attending: req.params.id})
     .then(events => { res.json(events) })
+    .catch(err => { res.json(err) })
+}
+
+function getOne(req, res){
+  Event.findById(req.body.id)
+    .then(event => { res.json(event) })
     .catch(err => { res.json(err) })
 }

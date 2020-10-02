@@ -63,9 +63,12 @@ class App extends Component {
           )}
         />
         <Route
-          exact path="/eventdetails"
-          render={() => 
-            <EventDetails />
+          exact path="/eventdetails/:id"
+          render={({match}) => 
+            <EventDetails 
+              match={match}
+              user={this.state.user}
+            />
           }
         />
         <Route

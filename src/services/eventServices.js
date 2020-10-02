@@ -59,4 +59,9 @@ return fetch(`${BASE_URL}useratt/${id}`, {
 }, {mode: "cors"})
 .then(res => res.json())
 }
+
+export function eventDetails(id) {
+    return fetch(`${BASE_URL}event/${id}`)
+        .then(res => res.json())
+}
   
